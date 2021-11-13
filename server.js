@@ -22,7 +22,7 @@ app.get("/", (req,res) => {
 
 // Index
 app.get("/drinks", (req,res) => {
-    res.send(drinks);
+    res.render("./drinks_index.ejs");
 })
 
 // New
