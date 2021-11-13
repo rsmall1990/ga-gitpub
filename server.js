@@ -21,6 +21,10 @@ app.get("/", (req,res) => {
 });
 
 // Index
+app.get("/drinks", (req,res) => {
+    res.send(drinks);
+})
+
 // New
 // Delete
 // update
