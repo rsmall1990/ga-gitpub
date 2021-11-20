@@ -15,12 +15,14 @@
 </head>
 
 <body>
-    <h1>Welcome to gitPub</h1>
+    <h1>GitPub Drinks</h1>
     <ul>
         <% for(let i = 0; i < drinks.length; i+=1) { %>
         <li>
             <a href="/drinks/<%= i %>">
-                <%= drinks[i].name[0].toUpperCase() + drinks[i].name.substring(1) %>
+                <%= drinks[i].name[0].toUpperCase() + drinks[i].name.substring(1) %> <!-- it said only first word, 
+                    so that's what I did, but you could loop over again sepparating by spaces to capitalize the 
+                    first letter of each word -->
             </a>
         </li>
         <% } %>
