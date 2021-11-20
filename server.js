@@ -2,6 +2,7 @@
 require("dotenv").config();
 const express = require("express");
 const drinks = require("./models/drinks.js"); // <-- must use relative file path to require
+const food = require("./models/food.js");
 
 // initialize app
 const app = express();
@@ -26,6 +27,12 @@ app.get("/drinks", (req, res) => {
   });
 });
 
+app.get("/food", (req, res) => {
+  res.render("./food_index.ejs", {
+    food,
+  });
+});
+
 // New
 // Delete
 // update
@@ -38,6 +45,12 @@ app.get("/drinks/:id", (req, res) => {
     drink: drinks[req.params.id],
   });
 });
+
+app.get("/food/:id", (req, res) => {
+    res.render("./food_show.ejs", {
+      food: food[req.params.id],
+    });
+  });
 
 // tell app to listen
 app.listen(port, () => console.log("Express is listening on port ", port));
